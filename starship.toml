@@ -1,99 +1,37 @@
+# ~/.config/starship.toml
+# Versão mínima — só o essencial, sem poluir o prompt
+
 format = """
-$os\
-$username\
-$hostname\
 $directory\
 $git_branch\
 $git_status\
-$python\
-$nodejs\
-$rust\
-$golang\
 $cmd_duration\
-$time\
-$line_break\
 $character
 """
 
 add_newline = false
-command_timeout = 3000
-
-[os]
-disabled = false
-format = "[$symbol ](bold white)"
-
-[os.symbols]
-Arch = "󰣇"
-Ubuntu = "󰕈"
-Fedora = "󰣛"
-Linux = "󰌽"
-
-[username]
-show_always = true
-style_user = "bold cyan"
-style_root = "bold red"
-format = "[$user](bold cyan) "
-
-[hostname]
-ssh_only = false
-style = "bold red"
-format = "[@$hostname](bold green) "
+command_timeout = 1000
 
 [directory]
 style = "bold blue"
-truncation_length = 4
-truncate_to_repo = false
-fish_style_pwd_dir_length = 1
-format = "[󰉋 $path](bold blue) "
-
-[directory.substitutions]
-"Documents" = "󰈙"
-"Downloads" = "󰇚"
-"Pictures" = "󰋩"
-"Music" = "󰝚"
-"Desktop" = "󰟀"
+truncation_length = 3
+format = "[$path]($style) "
 
 [git_branch]
-symbol = "󰘬 "
 style = "bold purple"
-format = "[$symbol$branch](bold purple) "
+format = "[$symbol$branch]($style) "
+symbol = " "
 
 [git_status]
 style = "bold red"
-format = "[$all_status$ahead_behind](bold red) "
-
-[python]
-symbol = " "
-style = "bold yellow"
-format = "[${symbol}${pyenv_prefix}(${version})](bold yellow) "
-
-[nodejs]
-symbol = " "
-style = "bold green"
-format = "[$symbol($version)](bold green) "
-
-[rust]
-symbol = " "
-style = "bold red"
-format = "[$symbol($version)](bold red) "
-
-[golang]
-symbol = " "
-style = "bold cyan"
-format = "[$symbol($version)](bold cyan) "
+format = "([$all_status$ahead_behind]($style)) "
 
 [cmd_duration]
-min_time = 1000
-format = "[󱎫 $duration](bold white) "
-
-[time]
-disabled = false
-time_format = "%H:%M"
-style = "bold white"
-format = "[󰥔 $time](bold white) "
+min_time = 2000
+format = "[$duration]($style) "
+style = "bold yellow"
 
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
-vimcmd_symbol = "[V](bold yellow)"
 
