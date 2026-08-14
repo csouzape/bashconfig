@@ -2,6 +2,8 @@
 # Versão mínima — só o essencial, sem poluir o prompt
 
 format = """
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -11,6 +13,19 @@ $character
 
 add_newline = false
 command_timeout = 1000
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style)"
+show_always = true
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "bold green"
+format = "[@$hostname]($style) "
+disabled = false
 
 [directory]
 style = "bold blue"
@@ -34,4 +49,3 @@ style = "bold yellow"
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
-
