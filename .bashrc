@@ -621,4 +621,3 @@ export PATH
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
-alias dsxtool='curl -fsSL https://raw.githubusercontent.com/csouzape/dsxtool/main/bootstrap.sh | bash'
